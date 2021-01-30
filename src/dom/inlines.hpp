@@ -75,6 +75,20 @@ std::ostream& operator << (std::ostream&, const LineBreak&);
 
 
 template <typename ElemType>
+struct SimpleInline : public std::string
+{
+    SimpleInline() {}
+
+    template <typename T>
+    SimpleInline(T t) : std::string(t) {}
+
+    template <typename Iter>
+    SimpleInline(Iter b, Iter e) : std::string(b, e) {}
+
+    // bool operator == (const SimpleInline<ElemType>& another) const
+};
+
+template <typename ElemType>
 struct CompoundInline : public std::vector<Inline>
 {
     CompoundInline() {}
@@ -89,20 +103,6 @@ struct CompoundInline : public std::vector<Inline>
 
 template <typename ElemType>
 std::ostream& operator << (std::ostream&, const CompoundInline<ElemType>&);
-
-template <typename ElemType>
-struct SimpleInline : public std::string
-{
-    SimpleInline() {}
-
-    template <typename T>
-    SimpleInline(T t) : std::string(t) {}
-
-    template <typename Iter>
-    SimpleInline(Iter b, Iter e) : std::string(b, e) {}
-
-    // bool operator == (const SimpleInline<ElemType>& another) const
-};
 
 template <typename ElemType>
 std::ostream& operator << (std::ostream&, const SimpleInline<ElemType>&);
