@@ -1,7 +1,7 @@
 #pragma once
 
 #include <boost/spirit/include/karma.hpp>
-#include <boost/test/predicate_result.hpp>
+#include <boost/test/tools/assertion_result.hpp>
 
 #include <sstream>
 

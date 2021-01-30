@@ -1,7 +1,7 @@
 #ifndef MARKDOWN_TEST_PREDICATES_HPP
 #define MARKDOWN_TEST_PREDICATES_HPP
 
-#include <boost/test/predicate_result.hpp>
+#include <boost/test/tools/assertion_result.hpp>
 
 #include <boost/spirit/include/qi.hpp>
 
